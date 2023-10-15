@@ -6,7 +6,7 @@ interface SubNav {
 export interface Navigation {
   name: string;
   to: string;
-  sub?: SubNav[];
+  sub?: | SubNav[];
 }
 
-export type HandleAction = () => void;
+export type HandleAction =() => void

@@ -20,11 +20,11 @@ export const MobileMenu = () => {
 
   return (
     <nav
-      className={`fixed w-[100%] top-[73.885px] md:top-[113.885px] transition translate-x-[-100%] ease-in-out duration-[.5s] ${
+      className={`fixed w-[100%] top-[77.885px] transition ease-in-out duration-[.5s] ${
         isMobileMenuOut ? "translate-x-0" : "translate-x-[-100%]"
       }`}
     >
-      <div className="w-[90%] mx-auto  p-[20px] bg-gray-200 flex flex-col gap-[10px]">
+      <div className="w-[90%] mx-auto  p-[20px] bg-gray-200 flex flex-col gap-[15px]">
         {navigations?.map((_nav, index) => {
           return (
             <div key={index} className="">
@@ -38,10 +38,10 @@ export const MobileMenu = () => {
                   </div>
                 ) : null}
               </div>
-              <div className={`${expandedItems[index] ? 'block' : 'hidden'}`}>
+              <div className={`ml-[20px] ${expandedItems[index] ? 'block' : 'hidden'}`}>
                 {_nav.sub?.map((_sub, subIndex) => {
                   return (
-                    <a href={_sub.to} key={subIndex}>
+                    <a href={_sub.to} key={subIndex} className="text-[12px] uppercase">
                       {_sub.name}
                     </a>
                   );

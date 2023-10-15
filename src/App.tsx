@@ -8,11 +8,36 @@ import {
 } from "./context/context";
 import { NAVIGATIONS } from "./utils/static";
 import { MobileMenu } from "./layouts/MobileMenu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   const [isMobileMenuOut, setIsMobileMenuOut] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
+  useEffect(() => {
+    // Function to update screenWidth
+    const updateScreenWidth = () => {
+      setScreenWidth(window.innerWidth);
+
+      // Check if the screen width is greater than 768 pixels and close the mobile menu
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOut(false);
+      }
+    };
+
+    // Add an event listener for the resize event
+    window.addEventListener("resize", updateScreenWidth);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", updateScreenWidth);
+    };
+  }, []);
+
+  console.log(screenWidth);
+  
+  
+  
   const handleOpenMobileMenu = () => {
     setIsMobileMenuOut(prev => !prev)
   }
