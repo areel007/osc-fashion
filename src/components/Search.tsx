@@ -16,7 +16,7 @@ export const Search = () => {
         />
       </svg>
 
-      <input type="text" placeholder="Search..." className="py-[10px] outline-none" />
+      <input type="text" placeholder="Search..." className="py-[10px] outline-none bg-transparent w-full" />
     </div>
   );
 };

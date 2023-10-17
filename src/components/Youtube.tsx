@@ -7,8 +7,8 @@ export const Youtube = () => {
   }
 
   const opts: YouTubeProps['opts'] = {
-    height: '390',
-    width: '1000',
+    height: '600',
+    width: '100%',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,

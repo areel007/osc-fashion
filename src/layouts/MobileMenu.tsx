@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { MobileMenuContext, NavigationContext } from "../context/context";
 import { ArrowDown } from "../components/ArrowDown";
+import { Search } from "../components/Search";
 
 export const MobileMenu = () => {
   const isMobileMenuOut = useContext(MobileMenuContext);
@@ -20,11 +21,13 @@ export const MobileMenu = () => {
 
   return (
     <nav
-      className={`fixed w-[100%] top-[77.885px] transition ease-in-out duration-[.5s] ${
-        isMobileMenuOut ? "translate-x-0" : "translate-x-[-100%]"
-      }`}
+      className={`fixed w-[100%] top-[77.885px] z-[12] transition ease-in-out duration-[.5s] ${isMobileMenuOut ? "translate-x-0" : "translate-x-[-100%]"
+        }`}
     >
-      <div className="w-[90%] mx-auto  p-[20px] bg-gray-200 flex flex-col gap-[15px]">
+      <div className="w-[90%] mx-auto  p-[20px] bg-white flex flex-col gap-[15px] shadow">
+        <div>
+          <Search />
+        </div>
         {navigations?.map((_nav, index) => {
           return (
             <div key={index} className="">
