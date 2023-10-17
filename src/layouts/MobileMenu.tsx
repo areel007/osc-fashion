@@ -1,11 +1,12 @@
-import { useContext, useState } from "react";
-import { MobileMenuContext, NavigationContext } from "../context/context";
+import { useState } from "react";
 import { ArrowDown } from "../components/ArrowDown";
 import { Search } from "../components/Search";
+import { useNav } from "../hooks/useNav";
+import { useMobileMenu } from "../hooks/useMobileMenu";
 
 export const MobileMenu = () => {
-  const isMobileMenuOut = useContext(MobileMenuContext);
-  const navigations = useContext(NavigationContext);
+  const isMobileMenuOut = useMobileMenu()
+  const navigations = useNav();
 
   // Create a separate state for each navigation item
   const [expandedItems, setExpandedItems] = useState<boolean[]>([]);
@@ -21,7 +22,7 @@ export const MobileMenu = () => {
 
   return (
     <nav
-      className={`fixed w-[100%] top-[77.885px] z-[12] transition ease-in-out duration-[.5s] ${isMobileMenuOut ? "translate-x-0" : "translate-x-[-100%]"
+      className={`fixed w-[100%] top-[77.885px] z-[12] transition ease-in-out duration-[.5s] ${isMobileMenuOut?.isMobileMenuOut ? "translate-x-0" : "translate-x-[-100%]"
         }`}
     >
       <div className="w-[90%] mx-auto  p-[20px] bg-white flex flex-col gap-[15px] shadow">

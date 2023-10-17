@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { Search } from "../components/Search";
-import { useContext } from "react";
-import {
-  HamburgerActionContext,
-  MobileMenuContext,
-  NavigationContext,
-} from "../context/context";
+import { useMobileMenu } from "../hooks/useMobileMenu";
+import {useNav} from "../hooks/useNav"
 import { ArrowDown } from "../components/ArrowDown";
 import { useLocation } from "react-router-dom";
 import { Hamburger } from "../components/Hamburger";
@@ -14,10 +10,9 @@ import { Cancel } from "../components/Cancel";
 import { Cart } from "../components/Cart";
 
 export const Header = () => {
-  const navigations = useContext(NavigationContext);
+  const navigations = useNav()
   const location = useLocation();
-  const handleOpenMobileMenu = useContext(HamburgerActionContext);
-  const isMobileMenuOut = useContext(MobileMenuContext);
+  const isMobileMenuOut = useMobileMenu()
 
   return (
     <header className="fixed md:sticky top-0 md:top-[-100px] w-full z-[20] bg-white">
@@ -32,8 +27,8 @@ export const Header = () => {
             <Cart />
           </div>
 
-          <div className="block md:hidden" onClick={handleOpenMobileMenu}>
-            {isMobileMenuOut ? <Cancel /> : <div className="flex gap-[5px] items-center">
+          <div className="block md:hidden" onClick={isMobileMenuOut?.openMobileMenu}>
+            {isMobileMenuOut?.isMobileMenuOut ? <Cancel /> : <div className="flex gap-[5px] items-center">
               <Cart />
               <Hamburger />
             </div>}

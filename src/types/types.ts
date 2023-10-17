@@ -9,6 +9,14 @@ export interface Navigation {
   sub?: SubNav[];
 }
 
+interface ImgSrc {
+  name: string;
+}
+
+export interface Partners {
+  imgSrc: ImgSrc[];
+}
+
 export type HandleAction = () => void;
 
 export interface Product {
