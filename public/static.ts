@@ -11,9 +11,13 @@ export const NAVIGATIONS = [
     sub: [
       { name: "garmet production", to: "/" },
       { name: "fashion business consulting", to: "/" },
+      { name: "garmet production facotry setup", to: "/" },
+      { name: "hiring of fashion/apparel staff (intern/staff)", to: "/" },
+      { name: "garmet worker training", to: "/" },
+      { name: "partern making", to: "/" },
     ],
   },
-  { name: "shop", to: "shop" },
+  { name: "shop", to: "shop", sub: [{ name: "garmet production", to: "/" }] },
   { name: "contact us", to: "/contact-us" },
 ];
 
@@ -128,5 +132,5 @@ export const PARTNERS = [
   "https://res.cloudinary.com/oscfashion/images/f_auto,q_auto/v1617820075/oscfashion-coporate-client-unilever_6627359ab/oscfashion-coporate-client-unilever_6627359ab.png?_i=AA",
   "https://res.cloudinary.com/oscfashion/images/f_auto,q_auto/v1617820082/oscfashion-coporate-client-biswal_kwp8hr_6623c95ee/oscfashion-coporate-client-biswal_kwp8hr_6623c95ee.png?_i=AA",
   "https://res.cloudinary.com/oscfashion/images/f_auto,q_auto/v1617820071/oscfashion-partner-collaborations-british-council_pylyae_662951b56/oscfashion-partner-collaborations-british-council_pylyae_662951b56.png?_i=AA",
-  "https://res.cloudinary.com/oscfashion/images/f_auto,q_auto/v1617820071/oscfashion-partner-collaborations-british-council_pylyae_662951b56/oscfashion-partner-collaborations-british-council_pylyae_662951b56.png?_i=AA"
+  "https://res.cloudinary.com/oscfashion/images/f_auto,q_auto/v1617820071/oscfashion-partner-collaborations-british-council_pylyae_662951b56/oscfashion-partner-collaborations-british-council_pylyae_662951b56.png?_i=AA",
 ];

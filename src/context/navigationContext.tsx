@@ -1,6 +1,6 @@
-import { createContext, ReactNode} from "react";
+import { createContext, ReactNode } from "react";
 import { Navigation } from "../types/types";
-import { NAVIGATIONS } from "../utils/static";
+import { NAVIGATIONS } from "../../public/static";
 
 type NavigationProviderProps = {
   children: ReactNode;

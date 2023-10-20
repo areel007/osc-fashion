@@ -17,7 +17,6 @@ export const ProductCard = ({ name, price, imgOne, imgTwo, to }: ProductProduct)
         <a href={to} className="w-full h-auto cursor-pointer relative" target="_black" rel="nonopener npnreferrer">
             <div className="w-full h-[360px] relative group overflow-hidden">
 
-
                 <img src={imgOne} alt="osc fashion" className="w-full opacity-[1] transition ease-in-out duration-[1s] group-hover:opacity-[0] absolute top-0 left-0 h-full object-cover" />
 
                 {imgTwo ? <img src={imgTwo} alt="osc fashion" className="w-full opacity-0 transition ease-in-out duration-[1s] group-hover:opacity-[1] absolute top-0 left-0 h-full object-cover" /> : <img src={imgOne} alt="osc fashion" className="w-full opacity-0 transition ease-in-out duration-[1s] group-hover:opacity-[1] absolute top-0 left-0 h-full object-cover" />}

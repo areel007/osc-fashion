@@ -1,4 +1,10 @@
+import { useSearch } from "../hooks/useSearch";
+
 export const Search = () => {
+  const textInput = useSearch()?.textInput
+  const handleChange = useSearch()?.handleChange
+  const handleSubmit = useSearch()?.handleSubmit
+
   return (
     <div className="flex items-center gap-[10px] border border-gray-500 px-[10px] rounded">
       <svg
@@ -8,6 +14,7 @@ export const Search = () => {
         strokeWidth={1.5}
         stroke="currentColor"
         className="w-[16px] h-[16px] text-gray-500"
+        onClick={handleSubmit}
       >
         <path
           strokeLinecap="round"
@@ -16,7 +23,7 @@ export const Search = () => {
         />
       </svg>
 
-      <input type="text" placeholder="Search..." className="py-[10px] outline-none bg-transparent w-full" />
+      <input type="text" value={textInput} onChange={handleChange} placeholder="Search..." className="py-[10px] outline-none bg-transparent w-full" />
     </div>
   );
 };

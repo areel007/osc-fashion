@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { ProductCard } from "../components/ProductCard";
-import { ProductsContext } from "../context/context";
+import { ProductsContext } from "../context/productsContext";
 import { useMobileMenu } from "../hooks/useMobileMenu";
 import { Partners } from "../components/Partners";
 import { Testimonials } from "../components/Testimonials";
@@ -47,7 +47,7 @@ export const Home = () => {
 
       {/* Clients */}
       <div className="py-[40px] md:py-[60px] lg:py-[100px]">
-      <div className="w-[90%] xl:w-[1100px] mx-auto mb-[40px]">
+        <div className="w-[90%] xl:w-[1100px] mx-auto mb-[40px]">
           <h1 className="text-[24px] md:text-[30px] font-[600] text-center capitalize leading-[1] mb-[20px]">
             Some of our clients and partners
           </h1>
@@ -58,7 +58,8 @@ export const Home = () => {
 
       {/* Testimonials */}
       <div className="py-[40px] md:py-[60px] lg:py-[100px] bg-gray-100">
-      <div className="w-[90%] xl:w-[1100px] mx-auto mb-[40px]">
+
+        <div className="w-[90%] xl:w-[1100px] mx-auto mb-[40px]">
           <h1 className="text-[24px] md:text-[30px] font-[600] text-center capitalize leading-[1] mb-[20px]">
             Testimonials
           </h1>
@@ -67,7 +68,6 @@ export const Home = () => {
         <Testimonials />
       </div>
 
-      
 
     </div>
   );
