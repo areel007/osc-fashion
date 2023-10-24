@@ -14,6 +14,7 @@ import { Footer } from "./layouts/Footer";
 import { FavoriteContextProvider } from "./context/favoriteContext";
 import { ProductContextProvider } from "./context/productsContext";
 import { SearchBoxContextProvider } from "./context/searchContext";
+import { AboutUs } from "./pages/AboutUs";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
                         <Home />
                       }
                     />
+
+                    {/* About us */}
+                    <Route path="/about" element={<AboutUs />} />
 
                     {/* No match */}
                     <Route path="*" element={<NotFound />} />
